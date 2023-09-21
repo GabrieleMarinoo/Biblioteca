@@ -1,0 +1,39 @@
+plugins {
+	id "org.springframework.boot" version "3.1.3"
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+
+def environment = hasProperty('env') ? env : 'local'
+
+sourceCompatibility = JavaVersion.VERSION_17
+targetCompatibility = JavaVersion.VERSION_17
+
+repositories {
+	mavenCentral()
+}
+
+sourceSets {
+	main {
+		resources {
+			srcDir "etc/$environment"
+		}
+	}
+}
+
+
+bootJar {
+	archiveFileName = 'biblioteca.jar'
+	launchScript()
+}
+
+dependencies {
+	implementation group: 'org.springframework.boot', name: 'spring-boot-starter', version: '3.1.3'
+}
+
+eclipse {
+	project {
+		name 'Biblioteca'
+	}
+}
