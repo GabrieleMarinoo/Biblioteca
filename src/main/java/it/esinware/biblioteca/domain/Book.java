@@ -13,16 +13,26 @@ import lombok.Setter;
 @Setter
 public class Book {
 	
-	@Id @Column(length = 50)
+	@Id 
+	@Column(length = 50)
 	private String isbn;
 	@Lob
 	private String title;
-	private double price;
-	private boolean isAvaible;
+	private Long price;
+	private Boolean isAvailable;
 	@ManyToOne
 	private Editor editor;
 	@ManyToOne
 	private Author author;
 	@ManyToOne
 	private Client client;
+	
+	public Book() {	}
+	
+	public Book(String isbn, String title, Long price, Boolean isAvailable) {
+		this.isbn = isbn;
+		this.title = title;
+		this.price = price;
+		this.isAvailable = isAvailable;
+	}
 }
