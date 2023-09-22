@@ -5,12 +5,14 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Lob;
 import jakarta.persistence.ManyToOne;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 
 @Entity
 @Getter
 @Setter
+@AllArgsConstructor
 public class Book {
 	
 	@Id 
@@ -29,10 +31,5 @@ public class Book {
 	
 	public Book() {	}
 	
-	public Book(String isbn, String title, Long price, Boolean isAvailable) {
-		this.isbn = isbn;
-		this.title = title;
-		this.price = price;
-		this.isAvailable = isAvailable;
-	}
+	
 }
