@@ -1,10 +1,10 @@
 package it.esinware.biblioteca.domain;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Lob;
+import jakarta.persistence.ManyToOne;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -13,12 +13,16 @@ import lombok.Setter;
 @Setter
 public class Book {
 	
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Long id;
+	@Id @Column(length = 50)
 	private String isbn;
 	@Lob
 	private String title;
 	private double price;
 	private boolean isAvaible;
+	@ManyToOne
+	private Editor editor;
+	@ManyToOne
+	private Author author;
+	@ManyToOne
+	private Client client;
 }
