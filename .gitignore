@@ -1,3 +1,6 @@
-.settings
+.settings/**
 .project
 .classpath
+.gradle/**
+bin/**
+biblioteca.pid
