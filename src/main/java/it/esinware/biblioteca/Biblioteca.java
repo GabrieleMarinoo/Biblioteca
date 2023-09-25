@@ -12,7 +12,7 @@ import ch.qos.logback.classic.Logger;
 @EnableWebMvc
 public class Biblioteca {
 	
-	 private static final Logger logger = (Logger) LoggerFactory.getLogger(Biblioteca.class);
+	private static final Logger logger = (Logger) LoggerFactory.getLogger(Biblioteca.class);
 
 	public static void main(String[] args) {
 		SpringApplication app = new SpringApplication(Biblioteca.class);
