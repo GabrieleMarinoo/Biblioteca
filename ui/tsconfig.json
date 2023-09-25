@@ -1,0 +1,19 @@
+{
+  "compileOnSave": false,
+  "angularCompilerOptions": { "strictTemplates": true },
+  "compilerOptions": {
+    "outDir": "../dist",
+    "baseUrl": ".",
+    "sourceMap": true,
+    "declaration": false,
+	"module": "es2020",
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "allowJs": true,
+    "target": "es2022",
+    "typeRoots": [
+      "../node_modules/@types"
+    ]
+  }
+}

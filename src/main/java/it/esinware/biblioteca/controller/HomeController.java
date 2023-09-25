@@ -22,7 +22,7 @@ public class HomeController {
 	
 	@GetMapping("/insert")
 	public ResponseEntity<Book> insert() {
-		// metti log
+		// metti log !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 		Book book = new Book("asdnf2894u9231gh3", "Just for Fun", 12L, true);
 		book = bookService.saveBook(book);
 		return new ResponseEntity<Book>(book, HttpStatus.OK);
