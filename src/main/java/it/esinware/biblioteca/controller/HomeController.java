@@ -1,5 +1,6 @@
 package it.esinware.biblioteca.controller;
 
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -9,15 +10,17 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import it.esinware.biblioteca.domain.Author;
+
+import ch.qos.logback.classic.Logger;
+import it.esinware.biblioteca.Biblioteca;
 import it.esinware.biblioteca.domain.Book;
-import it.esinware.biblioteca.domain.Client;
-import it.esinware.biblioteca.domain.Editor;
 import it.esinware.biblioteca.services.BookService;
 
 @Controller
 @RequestMapping("/home")
 public class HomeController {
+	
+	private static final Logger logger = (Logger) LoggerFactory.getLogger(Biblioteca.class);
 	
 	@Autowired
 	BookService bookService;
@@ -36,13 +39,13 @@ public class HomeController {
 	    return "inserimentoandatoabuonfine";
 	   
 	}
-	/*
+	
 	public ResponseEntity<Book> insert() {
-		// metti log !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 		Book book = new Book("asdnf2894u9231gh3", "Just for Fun", 12L, true);
 		book = bookService.saveBook(book);
+		logger.info("Book added correctly");
 		return new ResponseEntity<Book>(book, HttpStatus.OK);
 	}
-*/
+
 	
 }

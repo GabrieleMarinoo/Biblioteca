@@ -30,12 +30,16 @@ public class Book {
 	private Client client;
 	
 	public Book() { } 
+	public Book(String title, String isbn) {
+		this.title = title;
+		this.isbn = isbn;
+		
+	}
 	public Book(String isbn, String title, Long price, Boolean isAvailable) {
 		super();
 		this.isbn = isbn;
 		this.title = title;
 		this.price = price;
 		this.isAvailable = isAvailable;
-	}	
-	
+	}		
 }
