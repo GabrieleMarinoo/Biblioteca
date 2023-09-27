@@ -5,3 +5,6 @@
 bin/**
 biblioteca.pid
 /.gradle/
+/ui/node_modules/**
+/ui/.angular/**
+package-lock.json
