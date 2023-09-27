@@ -7,13 +7,13 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class AuthorModel {
-			
+public class ClientModel {
+	
 	private Long id;
 	private String name;
 	private String surname;
 	private Date birth;
-	private String username;
+    private String email;
 	private List<BookModel> books;
 
 }

@@ -14,5 +14,8 @@ public class BookService {
 	public Book saveBook(Book book) {
 		return bookRepo.save(book);
 	}
-
+	
+	public Iterable<Book> loadBooks() {
+		return bookRepo.findAll();
+	}
 }
