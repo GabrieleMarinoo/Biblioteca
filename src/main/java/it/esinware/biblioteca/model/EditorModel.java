@@ -10,6 +10,5 @@ public class EditorModel {
 	
 	private Long id;
 	private String name;
-	private List<BookModel> books;
-	
+	private List<BookModel> books;	
 }

@@ -5,6 +5,4 @@ import org.springframework.stereotype.Repository;
 import it.esinware.biblioteca.domain.Author;
 
 @Repository
-public interface AuthorRepository extends CrudRepository<Author, Long> {
-
-}
+public interface AuthorRepository extends CrudRepository<Author, Long> { }

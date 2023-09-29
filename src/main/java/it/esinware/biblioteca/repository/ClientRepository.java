@@ -5,6 +5,4 @@ import org.springframework.stereotype.Repository;
 import it.esinware.biblioteca.domain.Client;
 
 @Repository
-public interface ClientRepository extends CrudRepository<Client, Long> {
-
-}
+public interface ClientRepository extends CrudRepository<Client, Long> { }

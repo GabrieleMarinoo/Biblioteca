@@ -1,12 +1,12 @@
 <div>
    <div>
 		<header>
-			<p-toolbar>
+			<p-toolbar [style]="{'background':'white'}">
 			    <div class="p-toolbar-group-left">
-					<p-button label="Books" styleClass="p-button-warning"></p-button>
-			        <p-button label="Clients"></p-button>
-			        <p-button label="Editors" styleClass="p-button-secondary"></p-button>
-			        <p-button label="Authors"styleClass="p-button-success" class="btn-top"></p-button>
+					<p-button label="Books" styleClass="p-button-rounded p-button-primary" [ngStyle]="{'margin-right':'50px'}"></p-button>
+			        <p-button label="Clients"styleClass="p-button-rounded p-button-success" [ngStyle]="{'margin-right':'50px'}" ></p-button>
+			        <p-button label="Editors" styleClass="p-button-rounded p-button-help"[ngStyle]="{'margin-right':'50px'}"></p-button>
+			        <p-button label="Authors"styleClass="p-button-rounded p-button-danger" class="btn-top"></p-button>
 			    </div>
 			</p-toolbar>
 		</header>
