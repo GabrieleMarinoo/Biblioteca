@@ -3,18 +3,17 @@
 		<header>
 			<p-toolbar [style]="{'background':'white'}">
 			    <div class="p-toolbar-group-left">
-					<p-button label="Books" styleClass="p-button-rounded p-button-primary" [ngStyle]="{'margin-right':'50px'}"></p-button>
+					<!-- TOGLIERE GLI STILI CSS DALL'HTML, VANNO NEL RELATIVO FILE CSS -->
+					<p-button routerLink="/" label="HOME" ></p-button>
+					<p-button routerLink="/book" label="Books" styleClass="p-button-rounded p-button-primary" [ngStyle]="{'margin-right':'50px'}"></p-button>
 			        <p-button label="Clients"styleClass="p-button-rounded p-button-success" [ngStyle]="{'margin-right':'50px'}" ></p-button>
 			        <p-button label="Editors" styleClass="p-button-rounded p-button-help"[ngStyle]="{'margin-right':'50px'}"></p-button>
 			        <p-button label="Authors"styleClass="p-button-rounded p-button-danger" class="btn-top"></p-button>
 			    </div>
 			</p-toolbar>
 		</header>
-	</div>
-	
+	</div>	
 	<div>
-        <main>
-            <router-outlet></router-outlet>
-        </main>
+    	<router-outlet></router-outlet>
 	</div>
 </div>

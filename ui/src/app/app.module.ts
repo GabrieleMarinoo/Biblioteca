@@ -9,10 +9,16 @@ import { ToolbarModule } from 'primeng/toolbar';
 import { ButtonModule } from 'primeng/button';
 
 import { AppComponent } from './app.component';
+import { MainPageComponent } from './components/mainpage/mainpage.component'
+import { BookComponent } from './components/book/book.component';
+
+import { BookService } from './services/book.service'
 
 @NgModule({
   	declarations: [
-    	AppComponent
+    	AppComponent,
+    	MainPageComponent,
+    	BookComponent
   	],
   	imports: [
    		BrowserModule,
@@ -22,6 +28,7 @@ import { AppComponent } from './app.component';
    		ButtonModule
   	],
   	providers: [
+		BookService,
 		WINDOW_PROVIDERS,
     	{ provide: HTTP_INTERCEPTORS, useClass: BackEndInterceptor, multi: true },
   	],
