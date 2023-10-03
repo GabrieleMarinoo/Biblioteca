@@ -1,7 +1,6 @@
 package it.esinware.biblioteca.model;
 
 import java.util.Date;
-import java.util.List;
 
 import it.esinware.biblioteca.domain.Client;
 import it.esinware.mapping.annotation.TypeBinding;
@@ -18,5 +17,4 @@ public class ClientModel {
 	private String surname;
 	private Date birth;
     private String email;
-
 }

@@ -1,7 +1,5 @@
 package it.esinware.biblioteca.model;
 
-import java.util.List;
-
 import it.esinware.biblioteca.domain.Editor;
 import it.esinware.mapping.annotation.TypeBinding;
 import lombok.Getter;

@@ -10,8 +10,8 @@ export class BookService {
 
 	constructor(private http: HttpClient) {}
 
-  	load(): Observable<Book> {
-    	return this.http.get<Book>("/book/load").pipe(first(), map(res => {return plainToClass(Book, res)}));
+  	load(): Observable<Book[]> {
+    	return this.http.get<Book[]>("/books/load").pipe(first(), map(res => {return plainToClass(Book, res)}));
   	}
   
 }
