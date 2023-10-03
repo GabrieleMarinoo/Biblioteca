@@ -7,6 +7,7 @@ import { WINDOW_PROVIDERS } from './extension/window.provider';
 import { AppRoutingModule } from './app-routing.module';
 import { ToolbarModule } from 'primeng/toolbar';
 import { ButtonModule } from 'primeng/button';
+import { TableModule } from 'primeng/table';
 
 import { AppComponent } from './app.component';
 import { MainPageComponent } from './components/mainpage/mainpage.component'
@@ -25,7 +26,8 @@ import { BookService } from './services/book.service'
    		HttpClientModule,
    		AppRoutingModule,
    		ToolbarModule,
-   		ButtonModule
+   		ButtonModule,
+   		TableModule
   	],
   	providers: [
 		BookService,
