@@ -5,11 +5,11 @@ import java.util.List;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
-import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -20,12 +20,12 @@ public class Client {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	 private Long id;
-	 private String name;
-	 private String surname;
-	 private Date birth;
-	 private String email;
+	private Long id;
+	private String name;
+	private String surname;
+	private Date birth;
+	private String email;
     @OneToMany(mappedBy = "client", orphanRemoval = true, cascade = CascadeType.ALL)
-    @Getter(AccessLevel.NONE)
-	private List<Book> books; 
+	private List<Book> books;
+    
 }

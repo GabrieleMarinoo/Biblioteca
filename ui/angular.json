@@ -82,5 +82,8 @@
       }
     }
   },
-  "defaultProject": "biblioteca"
+  "defaultProject": "biblioteca",
+  "cli": {
+    "analytics": "4939753f-a590-4020-abd9-f513d570e970"
+  }
 }

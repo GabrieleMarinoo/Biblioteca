@@ -1,5 +1,7 @@
 package it.esinware.biblioteca.domain;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
@@ -25,11 +27,11 @@ public class Book {
 	@ManyToOne
 	private Client client;
 	
-	public Book() { } 
+	public Book() { }
+	
 	public Book(String title, String isbn) {
 		this.title = title;
-		this.isbn = isbn;
-		
+		this.isbn = isbn;		
 	}
 	
 	public Book(String isbn, String title, Long price, Boolean isAvailable) {
