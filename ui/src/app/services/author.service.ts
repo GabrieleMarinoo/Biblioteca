@@ -1,0 +1,17 @@
+import { Injectable } from '@angular/core';
+import { HttpClient, HttpResponse, HttpParams } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { map, first } from 'rxjs/operators';
+import { plainToClass } from "class-transformer";
+import { Author } from './../model/author.model';
+
+@Injectable()
+export class AuthorService {
+
+	constructor(private http: HttpClient) {}
+
+  	load(): Observable<Author[]> {
+    	return this.http.get<Author[]>("/authors/load").pipe(first(), map(res => {return plainToClass(Author, res)}));
+  	}
+  
+}

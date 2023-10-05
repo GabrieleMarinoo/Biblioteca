@@ -12,17 +12,21 @@ import { TableModule } from 'primeng/table';
 import { AppComponent } from './app.component';
 import { MainPageComponent } from './components/mainpage/mainpage.component'
 import { BookComponent } from './components/book/book.component';
+import { ClientComponent } from './components/client/client.component';
+import { AuthorComponent } from './components/author/author.component';
 
 import { BookService } from './services/book.service'
-import { ClientComponent } from './components/client/client.component';
+import { AuthorService } from './services/author.service';
 import { ClientService } from './services/client.service';
+
 
 @NgModule({
   	declarations: [
     	AppComponent,
     	MainPageComponent,
     	BookComponent,
-    	ClientComponent
+    	ClientComponent,
+    	AuthorComponent
   	],
   	imports: [
    		BrowserModule,
@@ -37,6 +41,9 @@ import { ClientService } from './services/client.service';
 		WINDOW_PROVIDERS,
     	{ provide: HTTP_INTERCEPTORS, useClass: BackEndInterceptor, multi: true },
     	ClientService,
+    	WINDOW_PROVIDERS,
+    	{ provide: HTTP_INTERCEPTORS, useClass: BackEndInterceptor, multi: true },
+    	AuthorService,
     	WINDOW_PROVIDERS,
     	{ provide: HTTP_INTERCEPTORS, useClass: BackEndInterceptor, multi: true },
   	],

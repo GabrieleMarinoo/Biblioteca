@@ -10,6 +10,8 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
+import jakarta.persistence.Temporal;
+import jakarta.persistence.TemporalType;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -23,6 +25,7 @@ public class Client {
 	private Long id;
 	private String name;
 	private String surname;
+	@Temporal(TemporalType.DATE)
 	private Date birth;
 	private String email;
     @OneToMany(mappedBy = "client", orphanRemoval = true, cascade = CascadeType.ALL)

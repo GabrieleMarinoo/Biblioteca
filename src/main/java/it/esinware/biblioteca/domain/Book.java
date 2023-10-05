@@ -24,8 +24,7 @@ public class Book {
 	private Boolean isAvailable;
 	@ManyToOne
 	private Editor editor;
-	@ManyToOne(fetch = FetchType.EAGER)
-	@JoinColumn(name = "author_id", referencedColumnName = "id")
+	@ManyToOne
 	private Author author;
 	@ManyToOne
 	private Client client;

@@ -1,7 +1,7 @@
 <div>
-	<h1>Lista Libri</h1>
+	<h1>Lista Autori</h1>
 	<div>
-		<p-table [columns]="cols" [value]="books" [tableStyle]="{ 'min-width': '50rem' }" [loading]="loading">
+		<p-table [columns]="cols" [value]="authors" [tableStyle]="{ 'min-width': '50rem' }" [loading]="loading">
 		    <ng-template pTemplate="header" let-columns>
 		        <tr>
 		            <th *ngFor="let col of columns">
@@ -12,13 +12,7 @@
 		    <ng-template pTemplate="body" let-rowData let-columns="columns">
 	    <tr>
 	        <td *ngFor="let col of columns">
-	            <ng-container *ngIf="col.field === 'author'">
-	                {{ rowData.author.surname }}
-	            </ng-container>
-	            
-	            	<ng-container *ngIf="col.field !== 'author'">
-	               	 {{ rowData[col.field] }}
-	            	</ng-container>
+	          {{ rowData[col.field] }}
 	        	</td>
 	    	</tr>
 	    </ng-template>

@@ -1,0 +1,9 @@
+.btn {
+	margin-left: 3vw;
+}
+
+.btn-footer {
+	bottom: 10vw;
+	position: absolute;
+	align-items:center;
+}
