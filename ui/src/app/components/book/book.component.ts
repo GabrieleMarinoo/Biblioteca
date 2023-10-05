@@ -26,7 +26,9 @@ export class BookComponent implements OnInit {
             { field: 'isbn', header: 'Codice' },
             { field: 'price', header: 'Prezzo' },
             { field: 'title', header: 'Titolo' },
-            { field: 'isAvailable', header: 'Disponibilità' }
+            { field: 'isAvailable', header: 'Disponibilità' },
+            { field : 'author', header : 'Autore'}
+            
         ];
 		
 		this.load();

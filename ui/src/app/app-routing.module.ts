@@ -3,11 +3,13 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { MainPageComponent } from './components/mainpage/mainpage.component';
 import { BookComponent } from './components/book/book.component';
+import { ClientComponent } from './components/client/client.component';
 
 const routes: Routes = [
 
 	{ path: '', component: MainPageComponent },
 	{ path: 'book', component: BookComponent },
+	{ path: 'client', component: ClientComponent },
 	
 ];
 

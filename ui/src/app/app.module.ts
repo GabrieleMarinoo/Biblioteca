@@ -14,12 +14,15 @@ import { MainPageComponent } from './components/mainpage/mainpage.component'
 import { BookComponent } from './components/book/book.component';
 
 import { BookService } from './services/book.service'
+import { ClientComponent } from './components/client/client.component';
+import { ClientService } from './services/client.service';
 
 @NgModule({
   	declarations: [
     	AppComponent,
     	MainPageComponent,
-    	BookComponent
+    	BookComponent,
+    	ClientComponent
   	],
   	imports: [
    		BrowserModule,
@@ -32,6 +35,9 @@ import { BookService } from './services/book.service'
   	providers: [
 		BookService,
 		WINDOW_PROVIDERS,
+    	{ provide: HTTP_INTERCEPTORS, useClass: BackEndInterceptor, multi: true },
+    	ClientService,
+    	WINDOW_PROVIDERS,
     	{ provide: HTTP_INTERCEPTORS, useClass: BackEndInterceptor, multi: true },
   	],
   	bootstrap: [AppComponent]
