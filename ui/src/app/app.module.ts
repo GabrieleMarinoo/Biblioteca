@@ -14,10 +14,12 @@ import { MainPageComponent } from './components/mainpage/mainpage.component'
 import { BookComponent } from './components/book/book.component';
 import { ClientComponent } from './components/client/client.component';
 import { AuthorComponent } from './components/author/author.component';
+import { EditorComponent } from './components/editor/editor.component';
 
 import { BookService } from './services/book.service'
 import { AuthorService } from './services/author.service';
 import { ClientService } from './services/client.service';
+import { EditorService } from './services/editor.service';
 
 
 @NgModule({
@@ -26,7 +28,8 @@ import { ClientService } from './services/client.service';
     	MainPageComponent,
     	BookComponent,
     	ClientComponent,
-    	AuthorComponent
+    	AuthorComponent,
+    	EditorComponent
   	],
   	imports: [
    		BrowserModule,
@@ -44,6 +47,9 @@ import { ClientService } from './services/client.service';
     	WINDOW_PROVIDERS,
     	{ provide: HTTP_INTERCEPTORS, useClass: BackEndInterceptor, multi: true },
     	AuthorService,
+    	WINDOW_PROVIDERS,
+    	{ provide: HTTP_INTERCEPTORS, useClass: BackEndInterceptor, multi: true },
+    	EditorService,
     	WINDOW_PROVIDERS,
     	{ provide: HTTP_INTERCEPTORS, useClass: BackEndInterceptor, multi: true },
   	],

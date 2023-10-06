@@ -25,6 +25,7 @@ h1 {
 #esinware {
   position: fixed;
   bottom: 0;
+  right: 30px;
   width: 15%;
 }
 

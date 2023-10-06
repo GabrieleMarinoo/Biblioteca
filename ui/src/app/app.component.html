@@ -1,12 +1,14 @@
 <div>
 	<div>
-	<router-outlet></router-outlet>	
+		<router-outlet></router-outlet>	
 	</div>
-    <div class="btn-footer flex justify-content-center">
-		<p-button class="btn" routerLink="/" label="HOME" styleClass="p-button-lg p-button-rounded p-button-secondary"></p-button>
-		<p-button  class="btn" routerLink="/book" label="Books" styleClass="p-button-lg p-button-rounded p-button-primary"></p-button>
-		<p-button  class="btn" routerLink="/client" label="Clients" styleClass="p-button-lg p-button-rounded p-button-success" ></p-button>
-		<p-button  class="btn" label="Editors" styleClass="p-button-lg p-button-rounded p-button-help"></p-button>
-		<p-button  class="btn" routerLink="/author" label="Authors"styleClass="p-button-lg p-button-rounded p-button-danger"></p-button>	    
+	<div class="btn-footer">
+		<p-toolbar>
+		    <p-button routerLink="/" label="HOME" styleClass="p-button-lg p-button-rounded p-button-secondary"></p-button>
+			<p-button routerLink="/book" label="BOOKS" styleClass="p-button-lg p-button-rounded p-button-primary"></p-button>
+			<p-button routerLink="/client" label="CLIENTS" styleClass="p-button-lg p-button-rounded p-button-success" ></p-button>
+			<p-button routerLink="/editor" label="EDITORS" styleClass="p-button-lg p-button-rounded p-button-help"></p-button>
+			<p-button routerLink="/author" label="AUTHORS" styleClass="p-button-lg p-button-rounded p-button-danger"></p-button>
+		</p-toolbar>
 	</div>
 </div>

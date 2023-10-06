@@ -26,8 +26,7 @@ export class AuthorComponent implements OnInit {
             { field: 'id', header: 'Codice' },
             { field: 'name', header: 'Nome' },
             { field: 'birth', header: 'Data di nascita' },
-            { field: 'surname', header: 'Cognome' },
-            { field : 'author', header : 'Autore'}        
+            { field: 'surname', header: 'Cognome' },       
         ];
 		
 		this.load();
