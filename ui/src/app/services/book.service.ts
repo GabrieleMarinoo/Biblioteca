@@ -13,5 +13,9 @@ export class BookService {
   	load(): Observable<Book[]> {
     	return this.http.get<Book[]>("/books/load").pipe(first(), map(res => {return plainToClass(Book, res)}));
   	}
+  	
+  	save(client: Book): Observable<Book> {
+		return this.http.post<Book>('/clients/save', client).pipe(first(),map(res => {return plainToClass(Book, res)}));
+	}  
   
 }

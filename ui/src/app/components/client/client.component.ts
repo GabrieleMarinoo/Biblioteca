@@ -15,8 +15,10 @@ interface Column {
 export class ClientComponent implements OnInit {
 
 	clients: Client[];
+	newClient : Client;
 	cols: Column[];
 	loading: boolean = false;
+	visible: boolean = false;
 	
 	constructor(private service: ClientService) { };
 			
@@ -40,5 +42,19 @@ export class ClientComponent implements OnInit {
 			this.clients = response; 
 			this.loading = false;
 		});
+	}
+	
+	add() {
+		this.newClient  = new Client();
+		this.visible = true;
+	}
+	
+	saved(client: Client) {
+		this.load();
+	}
+	
+	update(rowData : Client) {
+		this.newClient = rowData;
+		this.visible = true;
 	}
 }

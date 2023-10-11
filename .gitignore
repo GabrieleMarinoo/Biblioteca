@@ -8,3 +8,5 @@ biblioteca.pid
 /ui/node_modules/**
 /ui/.angular/**
 package-lock.json
+.metadata/
+.gitignore

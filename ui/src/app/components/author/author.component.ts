@@ -17,6 +17,8 @@ export class AuthorComponent implements OnInit {
 	authors: Author[];
 	cols: Column[];
 	loading: boolean = false;
+	newAuthor: Author;
+	visible: boolean = false;
 	
 	constructor(private service: AuthorService) { };
 			
@@ -26,7 +28,7 @@ export class AuthorComponent implements OnInit {
             { field: 'id', header: 'Codice' },
             { field: 'name', header: 'Nome' },
             { field: 'birth', header: 'Data di nascita' },
-            { field: 'surname', header: 'Cognome' },       
+            { field: 'surname', header: 'Cognome' },
         ];
 		
 		this.load();
@@ -38,5 +40,19 @@ export class AuthorComponent implements OnInit {
 			this.authors = response; 
 			this.loading = false;
 		});
+	}
+	
+	add() {
+		this.newAuthor = new Author();
+		this.visible = true;
+	}
+	
+	saved(author: Author) {
+		this.load();
+	}
+	
+	update(rowData : Author) {
+		this.newAuthor = rowData;
+		this.visible = true;
 	}
 }

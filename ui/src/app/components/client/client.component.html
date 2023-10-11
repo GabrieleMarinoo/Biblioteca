@@ -1,24 +1,37 @@
-<h1>Lista Clienti</h1>
 <div>
-   <p-table [columns]="cols" [value]="clients" [tableStyle]="{ 'min-width': '50rem' }" [loading]="loading">
-   <ng-template pTemplate="header" let-columns>
-      <tr>
-         <th *ngFor="let col of columns">
-            {{ col.header }}
-         </th>
-      </tr>
-   </ng-template>
-   <ng-template pTemplate="body" let-rowData let-columns="columns">
-      <tr>
-         <td *ngFor="let col of columns">
-            <ng-container *ngIf="col.field === 'birth'">
-               {{ rowData[col.field] | date:"dd/MM/yyyy"}}
-            </ng-container>
-            <ng-container *ngIf="col.field !== 'birth'">
-               {{ rowData[col.field] }}
-            </ng-container>
-         </td>
-      </tr>
-   </ng-template>
-   </p-table>
+   <h1>Lista Clienti</h1>
+   <div>
+      <p-table [columns]="cols" [value]="clients" [tableStyle]="{ 'min-width': '50rem' }" [loading]="loading">
+      <ng-template pTemplate="header" let-columns>
+         <tr>
+            <th *ngFor="let col of columns">
+               {{ col.header }}
+            </th>
+            <th style="width:6em">
+               <button pButton type="button" icon="pi pi-plus" class="ui-button-info" (click)="add()" matTooltip="Nuovo" matTooltipPosition="above"></button>
+            </th>
+         </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-rowData let-columns="columns">
+         <tr>
+            <td *ngFor="let col of columns">
+               <ng-container *ngIf="col.field === 'birth'">
+                  {{ rowData[col.field] | date:"dd/MM/yyyy"}}
+               </ng-container>
+               <ng-container *ngIf="col.field !== 'birth'">
+                  {{ rowData[col.field] }}
+               </ng-container>
+            </td>
+             <td>
+               <p-button icon="pi pi-pencil" (click)="update(rowData)"></p-button>
+            </td>
+         </tr>
+      </ng-template>
+      </p-table>
+   </div>
 </div>
+<p-dialog class="clientAddHeader" [(visible)]="visible" [minY]="700" [contentStyle]="{width: '30vw'}" [modal]="true" [closable]="true" header="AGGIUNGI UN CLIENTE">
+<ng-template pTemplate="content" >
+   <edit-client [client]="newClient" (onDialog)="visible = $event" (onSaved)="saved($event)"></edit-client>
+</ng-template>
+</p-dialog>

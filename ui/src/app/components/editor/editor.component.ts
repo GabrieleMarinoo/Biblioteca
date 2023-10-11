@@ -13,10 +13,12 @@ interface Column {
   styleUrls: ['./editor.component.css']
 })
 export class EditorComponent implements OnInit {
-
+    
+    newEditor: Editor;
 	editors: Editor[];
 	cols: Column[];
 	loading: boolean = false;
+	visible: boolean = false;
 	
 	constructor(private service: EditorService) { };
 			
@@ -37,5 +39,19 @@ export class EditorComponent implements OnInit {
 			this.editors = response; 
 			this.loading = false;
 		});
+	}
+	
+	add() {
+		this.newEditor  = new Editor();
+		this.visible = true;
+	}
+	
+	saved(editor: Editor) {
+		this.load();
+	}
+		
+	update(rowData : Editor) {
+		this.newEditor = rowData;
+		this.visible = true;
 	}
 }

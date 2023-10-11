@@ -14,4 +14,7 @@ export class ClientService {
     	return this.http.get<Client[]>("/clients/load").pipe(first(), map(res => {return plainToClass(Client, res)}));
   	}
   
+  save(client: Client): Observable<Client> {
+		return this.http.post<Client>('/clients/save', client).pipe(first(),map(res => {return plainToClass(Client, res)}));
+	}  
 }

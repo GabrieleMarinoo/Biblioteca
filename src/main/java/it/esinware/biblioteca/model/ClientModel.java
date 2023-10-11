@@ -3,6 +3,7 @@ package it.esinware.biblioteca.model;
 import java.util.Date;
 
 import it.esinware.biblioteca.domain.Client;
+import it.esinware.mapping.annotation.FieldBinding;
 import it.esinware.mapping.annotation.TypeBinding;
 import lombok.Getter;
 import lombok.Setter;
@@ -17,4 +18,5 @@ public class ClientModel {
 	private String surname;
 	private Date birth;
     private String email;
+    
 }

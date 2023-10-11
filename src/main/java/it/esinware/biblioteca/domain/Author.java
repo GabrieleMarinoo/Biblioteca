@@ -3,11 +3,9 @@ package it.esinware.biblioteca.domain;
 import java.util.Date;
 import java.util.List;
 
-import com.fasterxml.jackson.annotation.JsonManagedReference;
-
+import org.springframework.lang.NonNull;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
-import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -23,10 +21,13 @@ public class Author {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
+	@NonNull
     private String name;
+	@NonNull
 	private String surname;
+	@NonNull
 	private Date birth;
-	@OneToMany(mappedBy = "author", orphanRemoval = true, cascade = CascadeType.ALL)
+	@OneToMany(mappedBy = "author", orphanRemoval = false, cascade = CascadeType.ALL)
 	private List<Book> books;
 
 }

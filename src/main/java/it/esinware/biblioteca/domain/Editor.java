@@ -22,7 +22,7 @@ public class Editor {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Getter private Long id;
 	@Getter private String name;
-	@OneToMany(mappedBy = "editor", orphanRemoval = true, cascade = CascadeType.ALL)
+	@OneToMany(mappedBy = "editor", orphanRemoval = false, cascade = CascadeType.ALL)
 	private List<Book> books;
 
 }

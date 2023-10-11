@@ -22,4 +22,10 @@ public class ClientService {
 		List<Client> clients = clientRepo.findAll();
 		return beanMapper.map(clients, Client.class, ClientModel.class);
 	}
+	
+	public ClientModel save(ClientModel model) {
+ 		Client client = beanMapper.map(model, Client.class);
+ 		return beanMapper.map(clientRepo.save(client), ClientModel.class);
+		
+	}
 }

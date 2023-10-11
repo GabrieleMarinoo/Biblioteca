@@ -21,6 +21,16 @@ public class AuthorService {
 	public List<AuthorModel> loadAuthors() {
 		List<Author> authors = authorRepo.findAll();
 		List<AuthorModel> model = beanMapper.map(authors, Author.class, AuthorModel.class);		
+		model.sort((a1, a2) -> { 
+			return a1.getId().compareTo(a2.getId());
+		});
 		return model;
 	}
+	
+	public AuthorModel save(AuthorModel model) {
+ 		Author author = beanMapper.map(model, Author.class);
+ 		return beanMapper.map(authorRepo.save(author), AuthorModel.class);
+		
+	}
+
 }

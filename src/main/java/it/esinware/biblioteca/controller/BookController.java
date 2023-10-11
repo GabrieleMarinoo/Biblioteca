@@ -1,5 +1,6 @@
 package it.esinware.biblioteca.controller;
 
+import java.util.Collection;
 import java.util.List;
 
 import org.slf4j.LoggerFactory;
@@ -24,8 +25,9 @@ public class BookController {
 	BookService bookService;
 
 	@GetMapping("/load")
-	public ResponseEntity<List<BookModel>> load() {
-		return new ResponseEntity<List<BookModel>>(bookService.loadBooks(), HttpStatus.OK);
+	public ResponseEntity<Collection<BookModel>> load() {
+		Collection<BookModel> books = bookService.loadBooks();
+		return new ResponseEntity<Collection<BookModel>>(books, HttpStatus.OK);
 	}
 }
 

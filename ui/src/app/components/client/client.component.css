@@ -1,0 +1,7 @@
+:host ::ng-deep .clientAddHeader .p-dialog .p-dialog-header{
+	text-align: center;
+    align-items: center;
+    padding-top: 15px;
+    font-family: Verdana, sans-serif;
+}
+
