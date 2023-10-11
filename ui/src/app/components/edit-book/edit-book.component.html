@@ -1,0 +1,23 @@
+<div>
+   <div class="center">
+   </div>
+   <div  class="center">
+      <label><b>ISBN</b></label><br>
+      <input [(ngModel)] = "book.isbn" id="isbn"  pInputText placeholder="Isbn"  class="boxProperties" >
+   </div>
+   <div  class="center">
+      <label><b>TITOLO</b></label><br>
+      <input [(ngModel)] = "book.title" id="title"  pInputText placeholder="Titolo"  class="boxProperties">
+   </div>
+   <div  class="center">
+           <label><b>PREZZO</b></label><br>
+      <input [(ngModel)] = "book.price" id="price"  pInputText placeholder="Prezzo"  class="boxProperties">
+   </div>
+    <div  class="center">
+      <label><b>DISPONIBILITÀ</b></label><br>
+      <input [(ngModel)] = "book.isAvailable" id="isAvailable"  pInputText placeholder="Disponibilità"  class="boxProperties">
+   </div>
+   <div class= "center">
+      <button pButton type="button" label="Salva" (click)="save()"></button>
+   </div>
+</div>

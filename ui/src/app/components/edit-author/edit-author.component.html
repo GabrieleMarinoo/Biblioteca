@@ -1,0 +1,19 @@
+<div>
+   <div class="center">
+   </div>
+   <div  class="center">
+      <label><b>NOME</b></label><br>
+      <input [(ngModel)] = "author.name" id="name"  pInputText placeholder="Nome"  class="boxProperties" >
+   </div>
+   <div  class="center">
+      <label><b>COGNOME</b></label><br>
+      <input [(ngModel)] = "author.surname" id="surname"  pInputText placeholder="Cognome"  class="boxProperties">
+   </div>
+   <div  class="center">
+      <label><b>DATA DI NASCITA</b></label><br>
+      <p-calendar [(ngModel)]="author.birth" id="birth" dateFormat="dd.mm.yy" [showIcon]="true" [showButtonBar]="true" appendTo="body"></p-calendar><br><br>
+   </div>
+   <div class= "center">
+      <button pButton type="button" label="Salva" (click)="save()"></button>
+   </div>
+</div>

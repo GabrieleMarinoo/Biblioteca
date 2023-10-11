@@ -1,0 +1,23 @@
+<div>
+   <div class="center">
+   </div>
+   <div  class="center">
+      <label><b>NOME</b></label><br>
+      <input [(ngModel)] = "client.name" id="name"  pInputText placeholder="Nome"  class="boxProperties" >
+   </div>
+   <div  class="center">
+      <label><b>COGNOME</b></label><br>
+      <input [(ngModel)] = "client.surname" id="surname"  pInputText placeholder="Cognome"  class="boxProperties">
+   </div>
+   <div  class="center">
+      <label><b>DATA DI NASCITA</b></label><br>
+      <p-calendar [(ngModel)]="client.birth" id="birth" dateFormat="dd.mm.yy" [showIcon]="true" [showButtonBar]="true" appendTo="body"></p-calendar><br><br>
+   </div>
+    <div  class="center">
+      <label><b>EMAIL</b></label><br>
+      <input [(ngModel)] = "client.email" id="email"  pInputText placeholder="Email"  class="boxProperties">
+   </div>
+   <div class= "center">
+      <button pButton type="button" label="Salva" (click)="save()"></button>
+   </div>
+</div>
